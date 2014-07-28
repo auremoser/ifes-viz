@@ -9,15 +9,16 @@ Graphs in this series include 3 configurable charts with x/y editing capabilitie
 ####GRAPH 1: Line
 ![Line](https://raw.githubusercontent.com/auremoser/ifes-viz/master/assets/v3-posts.png)
 ####GRAPH 2: Stacked Bar
-![Stacked Bar](https://raw.githubusercontent.com/auremoser/ifes-viz/master/assets/v3-posts.png)
+![Stacked Bar](https://raw.githubusercontent.com/auremoser/ifes-viz/master/assets/v3-formfields.png)
 ####GRAPH 3: Bar
-![Bar](https://raw.githubusercontent.com/auremoser/ifes-viz/master/assets/v3-formfields.png)
+![Bar](https://raw.githubusercontent.com/auremoser/ifes-viz/master/assets/v3-regions.png)
 ####GRAPH 4: Chorpleth
 ![Choropleth](https://raw.githubusercontent.com/auremoser/ifes-viz/master/assets/v3-choropleth.png)
 
 ###Features
 * Translations (en/ar): in progress, you can demo this feature in the first posts chart by toggling the EN / AR buttons at top left.
-* Exporting: done, you can test this feature by clicking on the upper right dropdown in each chart ![Export Button](https://raw.githubusercontent.com/auremoser/ifes-viz/master/assets/v3-exportbutton.png)
+* Exporting: done, you can test this feature by clicking on the upper right dropdown in each chart: 
+![Export Button](https://raw.githubusercontent.com/auremoser/ifes-viz/master/assets/v3-exportbutton.png)
 * Data tables: in progress, can be show/hidden on button click below relevant graphs
 ![Data Tables](https://raw.githubusercontent.com/auremoser/ifes-viz/master/assets/v3-poststable.png)
 * Date Filtering: done, in graphs over time, an admin can filter the displayed data by date either with zoom buttons or the date filter input boxes at upper right in relevant graphs
