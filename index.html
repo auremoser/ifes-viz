@@ -61,7 +61,7 @@
         height:400px;
         border:#666;
       }
-      #indicators {
+      #formfields {
         width:100%;
         height:400px;
         border:#666;
@@ -85,8 +85,7 @@
               <span class="caret"></span>
             </button>
             <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
-              <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Dates</a></li>
-              <li role="presentation"><a role="menuitem" tabindex="-1" href="#">[Otherx-axis option]</a></li>
+              <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Date</a></li>
             </ul>
           </div>
         </div>
@@ -97,8 +96,8 @@
               <span class="caret"></span>
             </button>
             <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
-              <li role="presentation"><a role="menuitem" tabindex="-1" href= "#">Number of Posts (Incidents)</a></li>
-              <li role="presentation"><a role="menuitem" tabindex="-1" href= "#">[Other y-axis option]</a></li>
+              <li role="presentation"><a role="menuitem" tabindex="-1" href= "#">Number of Reports (Total)</a></li>
+              <li role="presentation"><a role="menuitem" tabindex="-1" href= "#">Number of Reports (Trusted/Untrusted)</a></li>
               <li role="presentation"><a role="menuitem" tabindex="-1" href= "#">[Other y-axis option]</a></li>
             </ul>
           </div>
@@ -192,9 +191,8 @@
               <span class="caret"></span>
             </button>
             <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
-              <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Poltical Party by Perpetrator</a></li>
-              <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Gender by Perpetrator</a></li>
-              <li role="presentation"><a role="menuitem" tabindex="-1" href="#">[Other Option]</a></li>
+              <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Formfield (selected in y-axis dropdown)</a></li>
+              <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Region</a></li>
             </ul>
           </div>
         </div>
@@ -205,7 +203,11 @@
               <span class="caret"></span>
             </button>
             <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
-              <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Counts</a></li>
+              <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Violence Type Counts</a></li>
+              <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Perpetrator Type Counts</a></li>
+              <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Victim Type Counts</a></li>
+              <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Perpetrator Political Party Counts</a></li>
+              <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Victim Political Party Counts</a></li>
             </ul>
           </div>
       </div>
@@ -216,11 +218,11 @@
         <div class="col-md-12">
          <div class="panel panel-info">
            <div class="panel-heading">
-             <h3 class="panel-title">Indicators Visualization</h3>
+             <h3 class="panel-title">Formfield Visualization</h3>
            </div>
            <div class="panel-body">
-             <div id="indicators">
-                <script type="text/javascript" src="js/indicators.js"></script>
+             <div id="formfields">
+                <script type="text/javascript" src="js/formfields.js"></script>
             </div>
            </div>
          </div>
@@ -247,7 +249,7 @@
          <!-- VISUALIZATION TABLE -->
          <div class="panel panel-info">
           <!-- Panel description contents -->
-          <div class="panel-heading">Indicator Data</div>
+          <div class="panel-heading">Formfield Data</div>
           <table class="table">
             <!-- TODO: REPLACE WITH FUNCTION TO RENDER REAL DATA -->
             <thead>

@@ -10,7 +10,7 @@
 					}
 				},
 				ignoreHiddenSeries: true,
-				renderTo: $('#indicators')[0]
+				renderTo: $('#formfields')[0]
 			},
 			colors: [
 			'#E9322D', '#46A546', '#2C81BA' , '#EC7063', '#FBD8DB', '#666'
@@ -63,7 +63,7 @@
                 inputBoxBorderColor: '#EC7063'
             },
 		    title: {
-		        text: 'Party Counts'
+		        text: 'Perpetrator Poltical Party Counts'
 		    },
 		    scrollbar: {
                 barBackgroundColor: '#EC7063',
