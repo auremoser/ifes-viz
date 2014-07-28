@@ -86,21 +86,21 @@
               <span class="caret"></span>
             </button>
             <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
-              <li role="presentation"><a role="menuitem" tabindex="-1" href=  "#">Dates</a></li>
-              <li role="presentation"><a role="menuitem" tabindex="-1" href=  "#">Another y-axis option</a></li>
+              <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Dates</a></li>
+              <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Another y-axis option</a></li>
             </ul>
           </div>
         </div>
       <div class="btn-group">
           <div class="dropdown">
-            <button class="btn btn-default dropdown-toggle" type="button"  id ="dropdownMenu1" data-toggle="dropdown">
+            <button class="btn btn-default dropdown-toggle" type="button" id ="dropdownMenu1" data-toggle="dropdown">
               Y-Axis Options
               <span class="caret"></span>
             </button>
             <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
-              <li role="presentation"><a role="menuitem" tabindex="-1" href=  "#">Number of Posts (Incidents)</a></li>
-              <li role="presentation"><a role="menuitem" tabindex="-1" href=  "#">Another x-axis option</a></li>
-              <li role="presentation"><a role="menuitem" tabindex="-1" href=  "#">Another x-axis option</a></li>
+              <li role="presentation"><a role="menuitem" tabindex="-1" href= "#">Number of Posts (Incidents)</a></li>
+              <li role="presentation"><a role="menuitem" tabindex="-1" href= "#">Another x-axis option</a></li>
+              <li role="presentation"><a role="menuitem" tabindex="-1" href= "#">Another x-axis option</a></li>
               <li role="presentation" class="divider"></li>
               <li role="presentation"><a role="menuitem" tabindex="-1" href=  "#">Separated link</a></li>
             </ul>
@@ -108,9 +108,9 @@
       </div>
     </div>
     <br/>
-    <!-- VISUALIZATION PANELS -->
-     <div class="row">
-      <div class="col-md-9">
+    <!-- GRAPH 1 -->
+    <div class="row">
+      <div class="col-md-12">
          <div class="panel panel-danger">
            <div class="panel-heading">
              <h3 class="panel-title">Post Visualization</h3>
@@ -124,96 +124,98 @@
             </div>
            </div>
          </div>
-         <!-- DATA BUTTONS -->
-        <div class="btn-group">
-          <button type="button" class="btn btn-default">Show Data</button>
+          <!-- DATA BUTTONS -->
           <div class="btn-group">
-            <div class="dropdown">
-              <button class="btn btn-default dropdown-toggle" type="button"  id ="dropdownMenu1" data-toggle="dropdown">
-                Download Data
-                <span class="caret"></span>
-              </button>
-              <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
-                <li role="presentation"><a role="menuitem" tabindex="-1 "href="#">Comma-Separated (.csv)</a></li>
-                <li role="presentation"><a role="menuitem" tabindex="-1 "href="#">Excel (.xlsx)</a></li>
-                <li role="presentation"><a role="menuitem" tabindex="-1 "href="#">Tab-Separated (.tsv)</a></li>
-              </ul>
+            <button type="button" class="btn btn-default">Show Data</button>
+            <div class="btn-group">
+              <div class="dropdown">
+                <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown">
+                  Download Data
+                  <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+                  <li role="presentation"><a role="menuitem" tabindex="-1 "href="#">Comma-Separated (.csv)</a></li>
+                  <li role="presentation"><a role="menuitem" tabindex="-1 "href="#">Excel (.xlsx)</a></li>
+                  <li role="presentation"><a role="menuitem" tabindex="-1 "href="#">Tab-Separated (.tsv)</a></li>
+                </ul>
+              </div>
             </div>
           </div>
-        </div>
+      <br>
+      <br>
+      <!-- VISUALIZATION TABLE 1 -->
+      <div class="panel panel-danger">
+      <!-- Panel description contents -->
+        <div class="panel-heading">Post Data</div>
+            <table class="table">
+              <!-- TODO: REPLACE WITH FUNCTION TO RENDER REAL DATA -->
+              <thead>
+                  <tr>
+                    <th>#</th>
+                    <th>Date</th>
+                    <th>Incident Title</th>
+                    <th>Location</th>
+                    <th>Category</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>1</td>
+                    <td>4/5/11</td>
+                    <td>NE503 in yola ATV journalists sourced for casof...</td>
+                    <td>Yola</td>
+                    <td>Trusted Report</td>
+                  </tr>
+                  <tr>
+                    <td>2</td>
+                    <td>3/30/11</td>
+                    <td>Labour party declares readiness to ensure zetolerance to violence.</td>
+                    <td>Yola</td>
+                    <td>Peace Event</td>
+                  </tr>
+                  <tr>
+                    <td>3</td>
+                    <td>3/31/11</td>
+                    <td>NTP announces action to shun violence durielections</td>
+                    <td>Abakaliki</td>
+                    <td>Civic Education</td>
+                  </tr>
+                </tbody>
+            </table>
       </div>
-    </div>
-    <br>
-    <!-- VISUALIZATION TABLE -->
-    <div class="panel panel-danger">
-    <!-- Panel description contents -->
-    <div class="panel-heading">Post Data</div>
-    <table class="table">
-      <!-- TODO: REPLACE WITH FUNCTION TO RENDER REAL DATA -->
-      <thead>
-          <tr>
-            <th>#</th>
-            <th>Date</th>
-            <th>Incident Title</th>
-            <th>Location</th>
-            <th>Category</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>1</td>
-            <td>4/5/11</td>
-            <td>NE503 in yola ATV journalists sourced for casof...</td>
-            <td>Yola</td>
-            <td>Trusted Report</td>
-          </tr>
-          <tr>
-            <td>2</td>
-            <td>3/30/11</td>
-            <td>Labour party declares readiness to ensure zetolerance to violence.</td>
-            <td>Yola</td>
-            <td>Peace Event</td>
-          </tr>
-          <tr>
-            <td>3</td>
-            <td>3/31/11</td>
-            <td>NTP announces action to shun violence durielections</td>
-            <td>Abakaliki</td>
-            <td>Civic Education</td>
-          </tr>
-        </tbody>
-    </table>
-   </div>
-      <hr>
-      <!-- AXES DROPDOWNS - GRAPH 2 -->
+    </div><!-- /.col-md-9 regions -->
+  </div> <!-- /.row regions -->
+  <hr>
+    <!-- AXES DROPDOWNS - GRAPH 2 -->
     <div class="btn-group-justified">
       <div class="btn-group">
         <div class="dropdown">
-            <button class="btn btn-default dropdown-toggle" type="button"  id="dropdownMenu1" data-toggle="dropdown">
+            <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown">
               X-Axis Options
               <span class="caret"></span>
             </button>
             <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
-              <li role="presentation"><a role="menuitem" tabindex="-1" href=  "#">Indicator 1</a></li>
-              <li role="presentation"><a role="menuitem" tabindex="-1" href=  "#">Indicator 2</a></li>
+              <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Indicator 1</a></li>
+              <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Indicator 2</a></li>
             </ul>
           </div>
         </div>
       <div class="btn-group">
           <div class="dropdown">
-            <button class="btn btn-default dropdown-toggle" type="button"  id="dropdownMenu1" data-toggle="dropdown">
+            <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown">
               Y-Axis Options
               <span class="caret"></span>
             </button>
             <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
-              <li role="presentation"><a role="menuitem" tabindex="-1" href=  "#">Counts</a></li>
+              <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Counts</a></li>
             </ul>
           </div>
       </div>
     </div>
     <br>
+    <!-- GRAPH 2 VIZ -->
       <div class="row">
-        <div class="col-md-9">
+        <div class="col-md-12">
          <div class="panel panel-info">
            <div class="panel-heading">
              <h3 class="panel-title">Indicators Visualization</h3>
@@ -226,23 +228,24 @@
          </div>
 
           <div class="btn-group">
-          <button type="button" class="btn btn-default">Show Data</button>
-          <div class="btn-group">
-            <div class="dropdown">
-              <button class="btn btn-default dropdown-toggle" type="button"  id="dropdownMenu1" data-toggle="dropdown">
-                Download Data
-                <span class="caret"></span>
-              </button>
-              <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
-                <li role="presentation"><a role="menuitem" tabindex="-1 " href= "#">Comma-Separated (.csv)</a></li>
-                <li role="presentation"><a role="menuitem" tabindex="-1 " href= "#">Excel (.xlsx)</a></li>
-                <li role="presentation"><a role="menuitem" tabindex="-1 " href= "#">Tab-Separated (.tsv)</a></li>
-              </ul>
+            <button type="button" class="btn btn-default">Show Data</button>
+            <div class="btn-group">
+              <div class="dropdown">
+                <button class="btn btn-default dropdown-toggle" type="button"  id="dropdownMenu1" data-toggle="dropdown">
+                  Download Data
+                  <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+                  <li role="presentation"><a role="menuitem" tabindex="-1 " href="#">Comma-Separated (.csv)</a></li>
+                  <li role="presentation"><a role="menuitem" tabindex="-1 " href="#">Excel (.xlsx)</a></li>
+                  <li role="presentation"><a role="menuitem" tabindex="-1 " href="#">Tab-Separated (.tsv)</a></li>
+                </ul>
+              </div>
             </div>
-          </div>
         </div>
         <br>
         <br>
+
          <!-- VISUALIZATION TABLE -->
          <div class="panel panel-info">
           <!-- Panel description contents -->
@@ -273,7 +276,7 @@
     </div> <!-- /.row regions -->
     <hr>
     <div class="row">
-        <div class="col-md-9">
+        <div class="col-md-12">
           <div class="panel panel-success">
             <div class="panel-heading">
               <h3 class="panel-title">Choropleth Map</h3>
@@ -285,6 +288,7 @@
           </div>
         </div>
     </div>
-  </div><!-- /.container-fluid -->
+  </div>
+
 </body>
 </html>
