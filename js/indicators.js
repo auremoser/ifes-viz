@@ -23,8 +23,45 @@
 				shadow: true
 			},
 		    rangeSelector: {
-		        selected: 1
-		    },
+		        // defaults to most recent time for filter (so, 3M=3months from last date)
+                enabled: true,
+                buttons: [{
+                    type: 'month',
+                    count: 1,
+                    text: _('1M')
+                }, {
+                    type: 'month',
+                    count: 3,
+                    text: _('3M')
+                }, {
+                    type: 'year',
+                    count: 1,
+                    text: _('1Y')
+                }, {
+                    type: 'all',
+                    text: _('All')
+                }],
+                buttonSpacing: 2,
+                buttonTheme: {
+                    stroke: 2,
+                    r: 5,
+                    style: {
+                        color: 'E9322D'
+                    },
+                    states: {
+                        hover: {
+                            fill: '#FBD8DB'
+                        },
+                        select: {
+                            fill: '#E9322D',
+                            style: {
+                                color: 'white'
+                            }
+                        }
+                    }
+                },
+                inputBoxBorderColor: '#EC7063'
+            },
 		    title: {
 		        text: 'Party Counts'
 		    },
@@ -79,7 +116,12 @@
                 }
             },
 			xAxis: {
-				ordinal: false
+				ordinal: false,
+			},
+			tooltip: {
+				pointFormat: '<span style="color:{series.color}">{series.name}</span>: <b>{point.y}</b><br/>',
+                    valueDecimals: 0,
+                    useHTML: true
 			},
 		    series: getData()
 		});
