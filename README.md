@@ -9,9 +9,9 @@ Graphs in this series include 3 configurable charts with x/y editing capabilitie
 ####GRAPH 1: Line
 ![Line](https://raw.githubusercontent.com/auremoser/ifes-viz/master/assets/v3-posts.png)
 ####GRAPH 2: Stacked Bar
-![Stacked Bar](https://raw.githubusercontent.com/auremoser/ifes-viz/master/assets/v3-posts.png)
+![Stacked Bar](https://raw.githubusercontent.com/auremoser/ifes-viz/master/assets/v3-formfields.png)
 ####GRAPH 3: Bar
-![Bar](https://raw.githubusercontent.com/auremoser/ifes-viz/master/assets/v3-formfields.png)
+![Bar](https://raw.githubusercontent.com/auremoser/ifes-viz/master/assets/v3-regions.png)
 ####GRAPH 4: Chorpleth
 ![Choropleth](https://raw.githubusercontent.com/auremoser/ifes-viz/master/assets/v3-choropleth.png)
 
