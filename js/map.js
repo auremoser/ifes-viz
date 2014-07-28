@@ -58,8 +58,8 @@ $(function() {
                 min: 1,
                 max: 10,
                 // type: 'logarithmic',
-                minColor: '#FBD8DB',
-                maxColor: '#E9322D'
+                minColor: '#68c871',
+                maxColor: '#286e2f'
         },
 
         series : [{
