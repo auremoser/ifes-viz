@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>IFES-DataViz</title>
+    <meta charset="utf-8">
+    <link rel="shortcut icon" href="https://raw.githubusercontent.com/auremoser/ifes-viz/master/assets/ifes-logo-favicon.ico">
+    <!-- BOOTSTRAP -->
+        <link href="css/vendor/bootstrap.min.css" rel="stylesheet">
+        <!-- HTML5 Shim and Respond.js IE8 support of HTML5   elements  and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page  via   file:// -->
+        <!--[if lt IE 9]>
+          <script src="https://oss.maxcdn.com/html5shiv/3.7.  2/html5shiv .min.js"></script>
+          <script src="https://oss.maxcdn.com/respond/1.4.2/respond .min  .js"></script>
+        <![endif]-->
+
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+    <!-- BOOTSTRAP PLUGINS HERE  -->
+      <script src="js/vendor/bootstrap.min.js"></script>
+    <!-- END BOOTSTRAP-->
+
+    <!-- LOCALIZATION -->
+    <script type="text/javascript" src="js/l10n/en.js"></script>
+    <script type="text/javascript" src="js/l10n/ar.js"></script>
+    <script type="text/javascript" src="js/l10n.js"></script>
+    <script type="text/javascript">
+      /*
+       * - First include the different language files.
+       * - Include the localization library, l10n.
+       * - Initialize the language from the query string paramter
+       */
+      l10n.setLocaleFromQueryString();
+
+      /*
+       * Initialize l10n menu
+       */
+      $('.l10n-btn').live('click',function(){
+        var code = $(this).data('l10n');
+        location = location.origin + location.pathname + "?lang="+code;
+      });
+    </script>
+    <!-- LOCALIZATION -->
+
+    <!-- CHARTS LIBS -->
+    <script src="http://code.highcharts.com/stock/highstock.js"></script>
+    <script src="http://code.highcharts.com/stock/modules/exporting.js"></script>
+    <script type="text/javascript" src="js/vendor/dsv.min.js"></script>
+
+    <!-- MAP LIBS -->
+    <script src="http://code.highcharts.com/maps/modules/map.js"></script>
+    <script src="http://code.highcharts.com/mapdata/countries/ye/ye-all.js"></script>
+
+    <style>
+      html,body{
+        padding-top: 20px;
+        padding-left: 10px;
+        padding-right: 10px;
+      }
+      html, body, h1,h2,h4,h6,li,a {
+        font-family: "Proxima Nova",Helvetica,Ariel,sans-serif !important;
+      }
+      #reports {
+        width:100%;
+        height:400px;
+        border:#666;
+      }
+      #indicators {
+        width:100%;
+        height:400px;
+        border:#666;
+      }
+      #map {
+        width:100%;
+        height:400px;
+        border:#666;
+      }
+    </style>
+
+<body>
+  <div class="container-fluid">
+    <!-- AXES DROPDOWNS - GRAPH 1 -->
+    <div class="btn-group-justified">
+      <div class="btn-group">
+        <div class="dropdown">
+            <button class="btn btn-default dropdown-toggle" type="button"  id="dropdownMenu1" data-toggle="dropdown">
+              X-Axis Options
+              <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+              <li role="presentation"><a role="menuitem" tabindex="-1" href=  "#">Dates</a></li>
+              <li role="presentation"><a role="menuitem" tabindex="-1" href=  "#">Another y-axis option</a></li>
+            </ul>
+          </div>
+        </div>
+      <div class="btn-group">
+          <div class="dropdown">
+            <button class="btn btn-default dropdown-toggle" type="button"  id ="dropdownMenu1" data-toggle="dropdown">
+              Y-Axis Options
+              <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+              <li role="presentation"><a role="menuitem" tabindex="-1" href=  "#">Number of Posts (Incidents)</a></li>
+              <li role="presentation"><a role="menuitem" tabindex="-1" href=  "#">Another x-axis option</a></li>
+              <li role="presentation"><a role="menuitem" tabindex="-1" href=  "#">Another x-axis option</a></li>
+              <li role="presentation" class="divider"></li>
+              <li role="presentation"><a role="menuitem" tabindex="-1" href=  "#">Separated link</a></li>
+            </ul>
+          </div>
+      </div>
+    </div>
+    <br/>
+    <!-- VISUALIZATION PANELS -->
+     <div class="row">
+      <div class="col-md-9">
+         <div class="panel panel-danger">
+           <div class="panel-heading">
+             <h3 class="panel-title">Post Visualization</h3>
+           </div>
+           <div class="panel-body">
+            <!-- LOCALIZATION BUTTONS -->
+            <button class='l10n-btn' data-l10n='en'>EN</button>
+            <button class='l10n-btn' data-l10n='ar'>AR</button>
+            <div id="reports">
+                <script type="text/javascript" src="js/reports.js"></script>
+            </div>
+           </div>
+         </div>
+         <!-- DATA BUTTONS -->
+        <div class="btn-group">
+          <button type="button" class="btn btn-default">Show Data</button>
+          <div class="btn-group">
+            <div class="dropdown">
+              <button class="btn btn-default dropdown-toggle" type="button"  id ="dropdownMenu1" data-toggle="dropdown">
+                Download Data
+                <span class="caret"></span>
+              </button>
+              <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+                <li role="presentation"><a role="menuitem" tabindex="-1 "href="#">Comma-Separated (.csv)</a></li>
+                <li role="presentation"><a role="menuitem" tabindex="-1 "href="#">Excel (.xlsx)</a></li>
+                <li role="presentation"><a role="menuitem" tabindex="-1 "href="#">Tab-Separated (.tsv)</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <br>
+    <!-- VISUALIZATION TABLE -->
+    <div class="panel panel-danger">
+    <!-- Panel description contents -->
+    <div class="panel-heading">Post Data</div>
+    <table class="table">
+      <!-- TODO: REPLACE WITH FUNCTION TO RENDER REAL DATA -->
+      <thead>
+          <tr>
+            <th>#</th>
+            <th>Date</th>
+            <th>Incident Title</th>
+            <th>Location</th>
+            <th>Category</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td>4/5/11</td>
+            <td>NE503 in yola ATV journalists sourced for casof...</td>
+            <td>Yola</td>
+            <td>Trusted Report</td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>3/30/11</td>
+            <td>Labour party declares readiness to ensure zetolerance to violence.</td>
+            <td>Yola</td>
+            <td>Peace Event</td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td>3/31/11</td>
+            <td>NTP announces action to shun violence durielections</td>
+            <td>Abakaliki</td>
+            <td>Civic Education</td>
+          </tr>
+        </tbody>
+    </table>
+   </div>
+      <hr>
+      <!-- AXES DROPDOWNS - GRAPH 2 -->
+    <div class="btn-group-justified">
+      <div class="btn-group">
+        <div class="dropdown">
+            <button class="btn btn-default dropdown-toggle" type="button"  id="dropdownMenu1" data-toggle="dropdown">
+              X-Axis Options
+              <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+              <li role="presentation"><a role="menuitem" tabindex="-1" href=  "#">Indicator 1</a></li>
+              <li role="presentation"><a role="menuitem" tabindex="-1" href=  "#">Indicator 2</a></li>
+            </ul>
+          </div>
+        </div>
+      <div class="btn-group">
+          <div class="dropdown">
+            <button class="btn btn-default dropdown-toggle" type="button"  id="dropdownMenu1" data-toggle="dropdown">
+              Y-Axis Options
+              <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+              <li role="presentation"><a role="menuitem" tabindex="-1" href=  "#">Counts</a></li>
+            </ul>
+          </div>
+      </div>
+    </div>
+    <br>
+      <div class="row">
+        <div class="col-md-9">
+         <div class="panel panel-info">
+           <div class="panel-heading">
+             <h3 class="panel-title">Indicators Visualization</h3>
+           </div>
+           <div class="panel-body">
+             <div id="indicators">
+                <script type="text/javascript" src="js/indicators.js"></script>
+            </div>
+           </div>
+         </div>
+
+          <div class="btn-group">
+          <button type="button" class="btn btn-default">Show Data</button>
+          <div class="btn-group">
+            <div class="dropdown">
+              <button class="btn btn-default dropdown-toggle" type="button"  id="dropdownMenu1" data-toggle="dropdown">
+                Download Data
+                <span class="caret"></span>
+              </button>
+              <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+                <li role="presentation"><a role="menuitem" tabindex="-1 " href= "#">Comma-Separated (.csv)</a></li>
+                <li role="presentation"><a role="menuitem" tabindex="-1 " href= "#">Excel (.xlsx)</a></li>
+                <li role="presentation"><a role="menuitem" tabindex="-1 " href= "#">Tab-Separated (.tsv)</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <br>
+        <br>
+         <!-- VISUALIZATION TABLE -->
+         <div class="panel panel-info">
+          <!-- Panel description contents -->
+          <div class="panel-heading">Indicator Data</div>
+          <table class="table">
+            <!-- TODO: REPLACE WITH FUNCTION TO RENDER REAL DATA -->
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>Date</th>
+                <th>Incident Title</th>
+                <th>Location</th>
+                <th>Category</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>...</td>
+                <td>...</td>
+                <td>...</td>
+                <td>..</td>
+                <td>..</td>
+              </tr>
+            </tbody>
+          </table>
+         </div>
+      </div><!-- /.col-md-9 regions -->
+    </div> <!-- /.row regions -->
+    <hr>
+    <div class="row">
+        <div class="col-md-9">
+          <div class="panel panel-success">
+            <div class="panel-heading">
+              <h3 class="panel-title">Choropleth Map</h3>
+            </div>
+            <div class="panel-body">
+              <div id="map"></div>
+              <script type="text/javascript" src="js/map.js"></script>
+            </div>
+          </div>
+        </div>
+    </div>
+  </div><!-- /.container-fluid -->
+</body>
+</html>
