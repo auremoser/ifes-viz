@@ -20,7 +20,7 @@
 			},
 			legend: {
 				enabled: true,
-				shadow: true
+				shadow: false
 			},
 		    rangeSelector: {
 		        // defaults to most recent time for filter (so, 3M=3months from last date)
@@ -63,7 +63,7 @@
                 inputBoxBorderColor: '#EC7063'
             },
 		    title: {
-		        text: 'Perpetrator Poltical Party Counts'
+		        text: 'Perpetrator Political Party Counts'
 		    },
 		    scrollbar: {
                 barBackgroundColor: '#EC7063',
