@@ -72,10 +72,10 @@
         border:#666;
       }
     </style>
-
+  </head>
 <body>
   <div class="container-fluid">
-    <h3>V3 Visualization Suite</h3>
+    <h3>Ushahidi V3 Visualization Suite</h3>
     <!-- AXES DROPDOWNS - GRAPH 1 -->
     <div class="btn-group-justified">
       <div class="btn-group">
@@ -104,7 +104,7 @@
       </div>
     </div>
     <br/>
-    <!-- GRAPH 1 -->
+    <!-- GRAPH 1 - LINE -->
     <div class="row">
       <div class="col-md-12">
          <div class="panel panel-danger">
@@ -213,7 +213,7 @@
       </div>
     </div>
     <br>
-    <!-- GRAPH 2 VIZ -->
+    <!-- GRAPH 2 - BAR -->
       <div class="row">
         <div class="col-md-12">
          <div class="panel panel-info">
@@ -245,8 +245,7 @@
         </div>
         <br>
         <br>
-
-         <!-- VISUALIZATION TABLE -->
+         <!-- VISUALIZATION TABLE - GRAPH 2 -->
          <div class="panel panel-info">
           <!-- Panel description contents -->
           <div class="panel-heading">Formfield Data</div>
@@ -275,6 +274,34 @@
       </div><!-- /.col-md-9 regions -->
     </div> <!-- /.row regions -->
     <hr>
+    <!-- AXES DROPDOWNS - GRAPH 3 -->
+    <div class="btn-group-justified">
+      <div class="btn-group">
+        <div class="dropdown">
+            <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown">
+              Contents
+              <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+              <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Number of Posts</a></li>
+            </ul>
+          </div>
+        </div>
+      <div class="btn-group">
+          <div class="dropdown">
+            <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown">
+              GIS Level
+              <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+              <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Natural Earth Regions</a></li>
+              <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Uploaded Data Regions</a></li>
+            </ul>
+          </div>
+      </div>
+    </div>
+    <br>
+    <!-- GRAPH 3 - CHOROPLETH -->
     <div class="row">
         <div class="col-md-12">
           <div class="panel panel-success">

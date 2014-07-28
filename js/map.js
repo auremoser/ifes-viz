@@ -34,7 +34,7 @@ $(function() {
 		},
 
 		subtitle : {
-			text: 'Incident counts by region'
+			text: 'Post counts by region'
 		},
 
         credits: {
@@ -66,7 +66,7 @@ $(function() {
             data : data,
             mapData: Highcharts.maps['countries/ye/ye-all'],
             joinBy: 'hc-key',
-            name: 'Incident counts:',
+            name: 'Post counts:',
             states: {
                 hover: {
                     color: '#2C81BA'
