@@ -23,23 +23,24 @@
 				shadow: false
 			},
 		    rangeSelector: {
+		    	// LOCALIZATION/TRANSLATION DISABLED = add _ if added
 		        // defaults to most recent time for filter (so, 3M=3months from last date)
                 enabled: true,
                 buttons: [{
                     type: 'month',
                     count: 1,
-                    text: _('1M')
+                    text: '1M'
                 }, {
                     type: 'month',
                     count: 3,
-                    text: _('3M')
+                    text: '3M'
                 }, {
                     type: 'year',
                     count: 1,
-                    text: _('1Y')
+                    text: '1Y'
                 }, {
                     type: 'all',
-                    text: _('All')
+                    text: 'All'
                 }],
                 buttonSpacing: 2,
                 buttonTheme: {
