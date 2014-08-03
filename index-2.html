@@ -8,6 +8,7 @@
     <!-- FOUNDATION -->
     <link rel="stylesheet" href="css/vendor/foundation.min.css"/>
     <link rel="stylesheet" href="css/vendor/normalize.css" />
+    <link type="text/css" media="screen" rel="stylesheet" href="css/vendor/responsive-tables.css" />
     <script src="js/vendor/modernizr.js"></script>
 
     <!-- LOCALIZATION/TRANSLATIONS HERE IF NECESSARY -->
@@ -54,6 +55,7 @@
     <!-- AXES DROPDOWNS - GRAPH 1 -->
     <!-- Dropdowns not working, maybe this bug? -->
     <!-- https://github.com/zurb/foundation/issues/4532 -->
+    <!-- http://stackoverflow.com/questions/21949643/foundation-5-dropdown-button-opening-but-not-closing -->
     <div class="row">
       <div class="large-12 columns">
         <div class="medium-6 columns">
@@ -98,7 +100,7 @@
     <div class="row">
       <div class="large-12 columns">
         <!-- TODO: REPLACE WITH FUNCTION TO RENDER REAL DATA -->
-        <table>
+        <table class="responsive">
           <thead>
             <tr>
               <th>#</th>
@@ -239,6 +241,7 @@
     <script src="js/foundation/foundation.js"></script>
     <script src="js/foundation/foundation.dropdown.js"></script>
     <script src="js/vendor/fastclick.js"></script>
+    <script type="text/javascript" src="js/foundation/responsive-tables.js"></script>
     <!-- CHARTS LIBS -->
     <script src="http://code.highcharts.com/stock/highstock.js"></script>
     <script src="http://code.highcharts.com/stock/modules/exporting.js"></script>
