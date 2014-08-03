@@ -38,24 +38,25 @@
      */
     function renderChart(data) {
         Highcharts.setOptions({
-            lang: {
-                contextButtonTitle: _('Graph context menu'),
-                decimalPoint: _('.'),
-                downloadJPEG: _('Download JPG'),
-                downloadPDF: _('Download PDF'),
-                downloadPNG: _('Download PNG'),
-                downloadSVG: _('Download SVG'),
-                months: [_('January'), _('February'), _('March'), _('April'), _('May'), _('June'), _('July'), _('August'), _('September'), _('October'), _('November'), _('December')],
-                printChart: _('Print'),
-                rangeSelectorFrom: _('From'),
-                rangeSelectorTo: _('To'),
-                rangeSelectorZoom: _('Zoom'),
-                resetZoom: _('Reset zoom'),
-                resetZoomTitle: _('Reset zoom level 1:1'),
-                shortMonths: [_('Jan'), _('Feb'), _('Mar'), _('Apr'), _('May'), _('Jun'), _('Jul'), _('Aug'), _('Sep'), _('Oct'), _('Nov'), _('Dec')],
-                thousandsSep: _(','),
-                weekdays: [_('Sunday'), _('Monday'), _('Tuesday'), _('Wednesday'), _('Thursday'), _('Friday'), _('Saturday')]
-            }
+            // LOCALIZATION/TRANSLATION DISABLED
+            // lang: {
+            //     contextButtonTitle: _('Graph context menu'),
+            //     decimalPoint: _('.'),
+            //     downloadJPEG: _('Download JPG'),
+            //     downloadPDF: _('Download PDF'),
+            //     downloadPNG: _('Download PNG'),
+            //     downloadSVG: _('Download SVG'),
+            //     months: [_('January'), _('February'), _('March'), _('April'), _('May'), _('June'), _('July'), _('August'), _('September'), _('October'), _('November'), _('December')],
+            //     printChart: _('Print'),
+            //     rangeSelectorFrom: _('From'),
+            //     rangeSelectorTo: _('To'),
+            //     rangeSelectorZoom: _('Zoom'),
+            //     resetZoom: _('Reset zoom'),
+            //     resetZoomTitle: _('Reset zoom level 1:1'),
+            //     shortMonths: [_('Jan'), _('Feb'), _('Mar'), _('Apr'), _('May'), _('Jun'), _('Jul'), _('Aug'), _('Sep'), _('Oct'), _('Nov'), _('Dec')],
+            //     thousandsSep: _(','),
+            //     weekdays: [_('Sunday'), _('Monday'), _('Tuesday'), _('Wednesday'), _('Thursday'), _('Friday'), _('Saturday')]
+            // }
         });
         console.log(data);
         $('#reports').highcharts('StockChart', {
@@ -64,23 +65,24 @@
                 '#E9322D', '#46A546', '#2C81BA' , '#EC7063', '#FBD8DB', '#666'
             ],
             rangeSelector: {
+            // LOCALIZATION/TRANSLATION DISABLED = add _ if added
             // defaults to most recent time for filter (so, 3M=3months from last date)
                 enabled: true,
                 buttons: [{
                     type: 'month',
                     count: 1,
-                    text: _('1M')
+                    text: '1M'
                 }, {
                     type: 'month',
                     count: 3,
-                    text: _('3M')
+                    text: '3M'
                 }, {
                     type: 'year',
                     count: 1,
-                    text: _('1Y')
+                    text: '1Y'
                 }, {
                     type: 'all',
-                    text: _('All')
+                    text: 'All'
                 }],
                 buttonSpacing: 2,
                 buttonTheme: {
@@ -107,24 +109,24 @@
                 enabled: false
             },
             title: {
-                text: _('Ushahidi Report Counts'),
+                text: 'Ushahidi Report Counts',
                 style: {
                     'color': '#E9322D'
                 }
             },
             xAxis: {
                 type: 'datetime',
-                reversed: _('axisOpposite')
+                reversed: 'axisOpposite'
             },
             yAxis: {
                 title: {
                     align: 'middle',
-                    text: _('Number of Reports'),
+                    text: 'Number of Reports',
                     style: {
                         'color': '#EC7063'
                     }
                 },
-                opposite: _('axisOpposite')
+                opposite: 'axisOpposite'
             },
             legend: {
                 enabled: true
@@ -146,13 +148,13 @@
                     useHTML: true
             },
             series: [{
-                name: _('Total Reports'),
+                name: 'Total Reports',
                 data: posts
             }, {
-                name: _('Trusted'),
+                name: 'Trusted',
                 data: trust
             }, {
-                name: _('Untrusted'),
+                name: 'Untrusted',
                 data: untrust
             }]
         });

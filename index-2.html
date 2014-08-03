@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="shortcut icon" href="https://raw.githubusercontent.com/auremoser/ifes/master/assets/ifes-logo-favicon.ico">
+    <title>V3-DataViz</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- FOUNDATION -->
+    <link rel="stylesheet" href="css/vendor/foundation.min.css"/>
+    <link rel="stylesheet" href="css/vendor/normalize.css" />
+    <script src="js/vendor/modernizr.js"></script>
+
+    <!-- LOCALIZATION/TRANSLATIONS HERE IF NECESSARY -->
+    <!-- removed for the poc version -->
+
+    <style>
+      html,body{
+        padding: 10px;
+      }
+      html, body, h1,h2,h4,h6,li,a {
+        font-family: "Proxima Nova",Helvetica,Ariel,sans-serif !important;
+      }
+      #reports {
+        width:100%;
+        height:400px;
+        border:#666;
+      }
+      #formfields {
+        width:100%;
+        height:400px;
+        border:#666;
+      }
+      #regions {
+        width:100%;
+        height:400px;
+        border:#666;
+      }
+      #map {
+        width:100%;
+        height:400px;
+        border:#666;
+        }
+      </style>
+    </style>
+  </head>
+  <body>
+
+    <div class="row">
+      <div class="large-12 columns">
+        <h1>Ushahidi V3 Visualizations</h1>
+      </div>
+    </div>
+    <!-- VISUALIZATION 1 -->
+    <!-- AXES DROPDOWNS - GRAPH 1 -->
+    <!-- Dropdowns not working, maybe this bug? -->
+    <!-- https://github.com/zurb/foundation/issues/4532 -->
+    <div class="row">
+      <div class="large-12 columns">
+        <div class="medium-6 columns">
+          <a href="#" data-dropdown="drop1" class="small secondary button radius dropdown expand">X-axis Options</a><br>
+          <ul id="drop1" class="f-dropdown open">
+            <li><a href="#">Date</a></li>
+          </ul>
+	      </div>
+        <div class="medium-6 columns">
+          <a href="#" data-dropdown="drop2" class="small secondary button radius dropdown expand">Y-axis Options</a><br>
+          <ul id="drop2" class="f-dropdown open">
+              <li><a href="#">Number of Reports (Total)</a></li>
+              <li><a href="#">Number of Reports (Trusted/Untrusted)</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- GRAPH 1 - LINE -->
+    <div class="row">
+      <div class="large-12 columns">
+        <div class="panel radius">
+          <div id="reports"></div>
+        </div>
+      </div>
+    </div>
+    <!-- DATA BUTTONS -->
+    <div class="row">
+      <div class="large-12 columns">
+        <ul class="button-group radius secondary">
+          <li><a href="#" class= "small button secondary">Show Data</a></li>
+          <li><a href="#" data-dropdown="drop3" class="small secondary button radius dropdown expand"style="padding-left: 10px">Download</a><br>
+          <ul id="drop3" class="f-dropdown open">
+              <li role="presentation"><a role="menuitem" tabindex="-1 "href="#">Comma-Separated (.csv)</a></li>
+              <li role="presentation"><a role="menuitem" tabindex="-1 "href="#">Excel (.xlsx)</a></li>
+              <li role="presentation"><a role="menuitem" tabindex="-1 "href="#">Tab-Separated (.tsv)</a></li>
+          </ul>
+        </ul>
+      </div>
+    </div>
+    <!-- TABLE 1 -->
+    <div class="row">
+      <div class="large-12 columns">
+        <!-- TODO: REPLACE WITH FUNCTION TO RENDER REAL DATA -->
+        <table>
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Date</th>
+              <th>Incident Title</th>
+              <th>Location</th>
+              <th>Description</th>
+              <th>Category</th>
+              <th>Type</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1</td>
+              <td>4/5/11</td>
+              <td>NE503 in yola ATV journalists sourced for casof...</td>
+              <td>Yola</td>
+              <td>NE503 in yola ATV journalists sourced for cases of electoral violence as a point of report</td>
+              <td>Trusted Report</td>
+              <td>1</td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td>3/30/11</td>
+              <td>Labour party declares readiness to ensure zetolerance to violence.</td>
+              <td>Yola</td>
+              <td>Labour party declared readiness to ensure zero tolerance to political thugery during election in Yola during their campaign rally in the state.</td>
+              <td>Peace Event</td>
+              <td>1</td>
+            </tr>
+            <tr>
+              <td>3</td>
+              <td>3/31/11</td>
+              <td>NTP announces action to shun violence durielections</td>
+              <td>Abakaliki</td>
+              <td>NTP calls for youths and politicians to shun violence in the forth coming elections in yola Adamawa state.</td>
+              <td>Civic Education</td>
+              <td>1</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- VISUALIZATION 2 -->
+    <!-- AXES DROPDOWNS - GRAPH 2 -->
+    <div class="row">
+      <div class="large-12 columns">
+        <div class="medium-6 columns">
+          <a href="#" data-dropdown="drop4" class="small secondary button radius dropdown expand">X-axis Options</a><br>
+          <ul id="drop4" class="f-dropdown open">
+            <li><a href="#">Formfield (selected in y-axis dropdown)</a></li>
+            <li><a href="#">Region</a></li>
+          </ul>
+        </div>
+        <div class="medium-6 columns">
+          <a href="#" data-dropdown="drop5" class="small secondary button radius dropdown expand">Y-axis Options</a><br>
+          <ul id="drop5" class="f-dropdown open">
+              <li><a href="#">Violence Type Counts</a></li>
+              <li><a href="#">Perpetrator Type Counts</a></li>
+              <li><a href="#">Victim Type Counts</a></li>
+              <li><a href="#">Perpetrator Political Party Counts</a></li>
+              <li><a href="#">Victim Political Party Counts</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <!-- GRAPH 2 - BAR -->
+    <div class="row">
+      <div class="large-12 columns">
+        <div class="panel radius">
+          <div id="formfields"></div>
+        </div>
+      </div>
+    </div>
+    <!-- VISUALIZATION 3 -->
+    <!-- AXES DROPDOWNS - GRAPH 3 -->
+    <div class="row">
+      <div class="large-12 columns">
+        <div class="medium-6 columns">
+          <a href="#" data-dropdown="drop6" class="small secondary button radius dropdown expand">X-axis Options</a><br>
+          <ul id="drop6" class="f-dropdown open">
+            <li ><a href="#">Natural Earth Regions</a></li>
+              <li><a href="#">Uploaded Data Regions</a></li>
+          </ul>
+        </div>
+        <div class="medium-6 columns">
+          <a href="#" data-dropdown="drop7" class="small secondary button radius dropdown expand">Y-axis Options</a><br>
+          <ul id="drop7" class="f-dropdown open">
+              <li ><a href="#">Violence Type Counts</a></li>
+              <li><a href="#">Perpetrator Type Counts</a></li>
+              <li><a role="menuitem" tabindex="-1" href="#">Victim Type Counts</a></li>
+              <li><a href="#">Political Party Counts</a></li>
+              <li><a href="#">Gender Counts</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- GRAPH 3 - BAR Regions -->
+    <div class="row">
+      <div class="large-12 columns">
+        <div class="panel radius">
+          <div id="regions"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- VISUALIZATION 4 -->
+    <!-- AXES DROPDOWNS - GRAPH 4 -->
+    <div class="row">
+      <div class="large-12 columns">
+        <div class="medium-6 columns">
+          <a href="#" data-dropdown="drop8" class="small secondary button radius dropdown expand">Contents</a><br>
+          <ul id="drop8" class="f-dropdown open">
+            <li ><a href="#">Number of Posts</a></li>
+          </ul>
+        </div>
+        <div class="medium-6 columns">
+          <a href="#" data-dropdown="drop9" class="small secondary button radius dropdown expand">Y-axis Options</a><br>
+          <ul id="drop9" class="f-dropdown open">
+            <li ><a href="#">Natural Earth Regions</a></li>
+            <li><a href="#">Uploaded Data Regions</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <!-- GRAPH 4 - CHOROPLETH -->
+    <div class="row">
+      <div class="large-12 columns">
+        <div class="panel radius">
+          <div id="map"></div>
+        </div>
+      </div>
+    </div>
+
+    <script src="js/vendor/jquery.js"></script>
+    <script src="js/foundation/foundation.js"></script>
+    <script src="js/foundation/foundation.dropdown.js"></script>
+    <script src="js/vendor/fastclick.js"></script>
+    <!-- CHARTS LIBS -->
+    <script src="http://code.highcharts.com/stock/highstock.js"></script>
+    <script src="http://code.highcharts.com/stock/modules/exporting.js"></script>
+    <script type="text/javascript" src="js/vendor/dsv.min.js"></script>
+    <!-- MAP LIBS -->
+    <script src="http://code.highcharts.com/maps/modules/map.js"></script>
+    <script src="http://code.highcharts.com/mapdata/countries/ye/ye-all.js"></script>
+    <script type="text/javascript" src="js/reports.js"></script>
+    <script type="text/javascript" src="js/regions.js"></script>
+    <script type="text/javascript" src="js/formfields.js"></script>
+    <script type="text/javascript" src="js/map.js"></script>
+    <script>
+      $(document).foundation();
+    </script>
+  </body>
+</html>
